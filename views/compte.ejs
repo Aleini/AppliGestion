@@ -1,0 +1,22 @@
+<% include main_layout.ejs %>
+    <div class="col-md-12">
+    <% for(var i=0;i<info.length;i++) { %>
+        <% var date = ( info[i].DateOperation ) %>
+        <% console.log(date) %>
+        <% var options = {weekday: 'long',
+            month: 'long',
+            day: 'numeric' } %>
+        <% var upgradeDate = date.toLocaleDateString('fr-FR',options) %>
+        <% console.log(upgradeDate) %>
+        <div class="col-md-12">
+            <ul class="operationList">
+                <li><%= upgradeDate %></li>
+                <li><%= info[i].Libellé %></li>
+                <li><%= info[i].Type %></li>
+                <li><%= info[i].Montant %> € </li>
+            </ul>
+        </div>
+    <% } %>
+    </div>  
+</body>
+</html>

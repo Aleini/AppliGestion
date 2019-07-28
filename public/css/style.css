@@ -1,0 +1,22 @@
+h2 {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: none;
+}
+
+a  {
+    color:black;
+}
+
+a:hover {
+    text-decoration: none;
+    color:grey;
+}
+
+.operationList li {
+    display: inline;
+    margin-right: 40px;
+}

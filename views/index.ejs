@@ -1,0 +1,14 @@
+<% include main_layout.ejs %>
+    <div class="col-md-12">
+    <% info.forEach(info => { %>
+        <div>
+            <h2> Liste des comptes </h2>
+            <br/>
+            <ul>
+                <li><a href="/compte"> <%= info.nom %> </a></li>
+            </ul>
+        </div>
+    <% }) %>
+    </div>
+</body>
+</html>
