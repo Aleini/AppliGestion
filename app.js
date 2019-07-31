@@ -2,10 +2,13 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const path = require('path');
+const $ = require('jquery')
 const app = express();
 
 const {homePage} = require("./routes/index");
 const {countPage} = require("./routes/compte");
+const {operationPage} = require('./routes/operation');
+const {addOperation} = require('./routes/addOperation');
 const port = 8080;
 
 console.log('Get connection ...');
@@ -28,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 // routes for the app
 app.get('/', homePage);
 app.get('/compte', countPage);
+app.get('/operation', operationPage);
+app.post('/addOperation', addOperation);
 
 conn.connect(function (err) {
   if (err) throw err;

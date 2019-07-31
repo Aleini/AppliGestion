@@ -1,22 +1,36 @@
 <% include main_layout.ejs %>
-    <div class="col-md-12">
-    <% for(var i=0;i<info.length;i++) { %>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-sm">
+            <thead class="dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Libellé</th>
+                    <th>Type paiement</th>
+                    <th>Montant</th>
+                    <th></th>
+                </tr>
+            </thead>
+        <% for(var i=0;i<info.length;i++) { %>
         <% var date = ( info[i].DateOperation ) %>
-        <% console.log(date) %>
         <% var options = {weekday: 'long',
             month: 'long',
             day: 'numeric' } %>
         <% var upgradeDate = date.toLocaleDateString('fr-FR',options) %>
-        <% console.log(upgradeDate) %>
-        <div class="col-md-12">
-            <ul class="operationList">
-                <li><%= upgradeDate %></li>
-                <li><%= info[i].Libellé %></li>
-                <li><%= info[i].Type %></li>
-                <li><%= info[i].Montant %> € </li>
-            </ul>
-        </div>
-    <% } %>
-    </div>  
+            <tbody>
+                <tr>
+                    <td><%= upgradeDate %></td>
+                    <td><%= info[i].Libellé %></td>
+                    <td><%= info[i].Type %></td>
+                    <td><%= info[i].Montant %> € </td>
+                    <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+                </tr>
+            </tbody>
+        <% } %>
+        </table>
+    </div> 
+    <div class="footer">
+        <a class="btn btn-info" href="/"> Retour </a>
+        <a class="btn btn-success" href="/operation"> Ajouter opération </a>
+    </div>
 </body>
 </html>

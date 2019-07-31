@@ -20,3 +20,26 @@ a:hover {
     display: inline;
     margin-right: 40px;
 }
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a {
+    margin-top: 50px;
+}
+
+.dark {
+    background-color: black;
+    color:white;
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+}
+
+input,label {
+    margin-left: 10%;
+}
